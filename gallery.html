@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photography App Gallery</title>
+
+<!--Map Styles-->
+<link rel="stylesheet" href="css/styles.css">
+	
+<!--My Stlyes-->	
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<input id="pac-input" class="controls" type="text" placeholder="Search Locations">
+	
+<button onclick="getLocation()" id="geolocate">My location</button>
+	
+<button onclick="flickrPhoto()" id="submitbtn">Submit</button>
+
+<input id="lat1" type="text">
+	
+<input id="lon1" type="text">
+
+<div id="map"></div>
+
+<div id="images1"> </div>	
+	
+<!--JQuery--> 
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="js/myjs.js"></script>
+	
+<!--Flickr API
+<script type="text/javascript">
+	
+$(document).ready(function(){
+
+//Connects to the Flickr API and reads the results of the query into a JSON array. This query uses the 'flickr.people.getPublicPhotos' method to access all the photos in a particular person's user account. It passes the resultant JSON array of data to the 'displayImages1' function below.
+
+	
+var ptag = "photolocapp"; 
+var pminupload = "2018-01-01";
+var paccuracy = 11;
+//var plat = lat;
+//var plon = lon;
+var plat = 37.7694;
+var plon = 122.4862;
+//var plat = 90.3455;
+//var plon = 95.3943;
+	
+var urlpage = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=007679df840b8956991cde966334badc&user_id=161416888%40N03&tags="+ptag+"&min_upload_date="+pminupload+"&sort=relevance&accuracy="+paccuracy+"&lat="+plat+"&lon="+plon+"&format=json&jsoncallback=?";
+	
+$.getJSON(urlpage, displayImages1);
+
+	
+	
+//This function actually does something with the data after it has been read in from the Flickr API.	
+function displayImages1(data) {	
+                     //Loop through the results in the JSON array of data. The 'data.photos.photo' bit is what you are trying to 'get at'. i.e. this loop looks at each photo in turn.
+                    $.each(data.photos.photo, function(i,item){
+					
+					//Reads in each photo id.	
+                    var photoID = item.id;
+					
+					//Adds the photo id to the 'images1' div (created in the main body of this html page).		
+					//$('#images1').append(photoID); 
+					
+					//Gets the url for the image.
+					var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
+					
+					//Uses this URL to creats a html 'img' tag.
+					htmlString = '<div class="feed"><img src="' + photoURL + '"></div>';			
+					
+					//Adds this image to the 'images1' div.
+					$('#images1').append(htmlString); 
+					
+					//Adds some basic formatting to seperate out the images.
+					//$('#images1').append("<br/><hr/><br/>");
+					
+					});	
+}
+}); 
+</script> 	
+
+<!--GoogleMaps-->	
+	
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0vB5CDDVk49fdRO1Ci6uZwRqwcG0j8iQ&callback=initMap" async defer></script>-->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0vB5CDDVk49fdRO1Ci6uZwRqwcG0j8iQ&libraries=places&callback=initAutocomplete"
+         async defer></script>
+	
+
+	
+</body>
+</html>

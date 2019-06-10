@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Snag</title>
+
+<!--Map Styles-->
+<!--<link rel="stylesheet" href="css/map.css">
+	
+<!--My Stlyes-->
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+
+
+<div id="search" class="search">
+  <img id="logo" src="logo.png" alt="PhotoSnag logo" width="225px">
+  <h1>Find new locations to photograph.</h1>	
+  <input id="pac-input" class="controls sbar" type="text" placeholder="Search Locations" onfocus="this.placeholder = ''">
+  <br>
+  <button onclick="getLocation()" id="geolocate" class="mylocate">My Location</button>
+  <button onclick="flickrPhoto()" id="submitbtn" class="ssubmit">Submit</button>
+  <input id="lat1" type="hidden">
+  <input id="lon1" type="hidden">
+  <div class="tooltip"><img src="infoicon.png" height="40px" alt="info icon">
+  	<span class="tooltiptext">This tool was designed to help photographers find new places to shoot using the Flickr database. Use the Location Search Bar and Submit button to find a place within a specific area or hit the My Location button to find the best photo spots near you.
+	</span>
+  </div>
+
+</div>
+
+<!--<div id="map"></div>-->
+
+<div id="images1" class="images1"></div>
+
+<footer>&copy; 2018 Joe Linares</footer>	
+
+<!--JQuery--> 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> 
+
+<!--My Scripts--> 
+<script src="js/myjs.js"></script> 
+<script src="js/flickr.js"></script> 
+
+<!--GoogleMaps--> 
+
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0vB5CDDVk49fdRO1Ci6uZwRqwcG0j8iQ&callback=initMap" async defer></script>--> 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0vB5CDDVk49fdRO1Ci6uZwRqwcG0j8iQ&libraries=places&callback=initAutocomplete" async defer></script>
+</body>
+</html>

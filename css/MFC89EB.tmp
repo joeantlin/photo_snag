@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+	height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    
+}
+
+.search img {
+	max-width: 100%;
+}
+
+.search input {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #FD809E;
+    font-size: 1.25em;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+.search button {
+    margin: 5% .5%;
+    vertical-align: top;
+    width: calc(95% / 2);
+    height: 50px;
+    font-size: 1.25em;
+    color: white;
+    background: #FD809E;
+    border: none;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
+}
+
+.images {
+	background: white;
+}
+
+.feed {
+	width: 33%;
+	padding-top: 33%;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	margin: -1px;
+
+}
+
+.feed img {
+	width: 100%;
+	min-height: 50%;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer {
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+	padding: 5px;
+	color: grey;
+}
+
+@media (min-width: 450px){
+	.search {
+		width: 400px;
+	}
+}
